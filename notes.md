@@ -327,8 +327,20 @@ because it runs for `n` length
 
 
 ```
+const countingSheep = n => {
+  let res = '';
+  for(let i = 0 ; i <= n ; i++){
+    if(i === n){
+      res+= 'all sheep have jumped over the fence.... now got the #### to sleep';
+    }else{
+      res += `sheep number ${i + 1} has jumped over the fence \n`;
+    }
+  }
+  return res;
+};
 
 ```
+`O(n)` again since it runs for n lenth of sheep (counting sheep)
 
 #### answer 
 `O()`
@@ -336,10 +348,13 @@ because it runs for `n` length
 ### part 2 
 #### Power Calculator
 
+
 Write a function called `powerCalculator()` that takes two parameters, an integer as a base, and another integer as an exponent. The function returns the value of the base raised to the power of the exponent. Use only exponents greater than or equal to 0 (positive numbers)
 
 * `powerCalculator(10,2)` should return `100`
 * `powerCalculator(10,-2)` should return `exponent should be >= 0`
+
+##### recersive
 
 ```
 const powerCalculator=( x, powOf) =>{
@@ -357,10 +372,23 @@ const powerCalculator=( x, powOf) =>{
 `O(1)`
 because it's taking 2 numbers and spits out a results 
 
+#### iteratively
+
+```
+const powerCalculator = (x,y) => Math.pow(x,y);
+```
+
+#### answer
+`O(1)`
+unless if it's running for y number of times 
+
+
 ### part 3 
 #### Reverse String
 
 Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
+
+##### recursive
 
 ```
 const gnirtsEsrever = str =>{
@@ -376,6 +404,27 @@ const gnirtsEsrever = str =>{
 since it is reversing a string it has to run for 
 
 
+
+#### iteratively
+
+
+```
+const strRe = str => str.split('').reverse().join('');
+```
+
+
+#### answer
+
+since i think the reverse method is a sorting function of some sort. 
+i guessing that this is still `O(n)` since with this boi here 
+it has to do
+1 split string to an array
+2 reverse array
+3 join array
+
+
+
+
 ### part 4 
 #### nth Triangular Number
 
@@ -388,7 +437,7 @@ Calculate the nth triangular number. A triangular number counts the objects that
 
  1st       2nd           3rd             nth?  
 ```
-
+##### recursive
 
 ```
 const nthTriangularNumber = n =>{
@@ -402,6 +451,20 @@ const nthTriangularNumber = n =>{
 #### answer
 `O()`
 
+#### iteratively
+
+
+```
+
+```
+
+
+#### answer
+`O()`
+
+
+
+
 ### part 5 
 #### String Splitter
 
@@ -410,6 +473,7 @@ Write a recursive function that splits a string based on a separator (similar to
 * Input: 02/20/2020
 * Output: `["02", "20", "2020"]`
 
+##### recursive
 ```
 const stringSplitter = (str, divVal = ' ') => {
   let index = str.indexOf(divVal);
@@ -423,12 +487,26 @@ const stringSplitter = (str, divVal = ' ') => {
 #### answer
 `O(1)`
 
+
+#### iteratively
+
+
+```
+
+```
+
+
+#### answer
+`O()`
+
+
+
 ### part 6
 #### Fibonacci
 
 Write a recursive function that prints the Fibonacci sequence of a given number. The Fibonacci sequence is a series of numbers in which each number is the sum of the 2 preceding numbers. For example, the 7th Fibonacci number in a Fibonacci sequence is 13. The sequence looks as follows: 1, 1, 2, 3, 5, 8, 13.
 
-
+##### recursive
 ```
 const fibonacci = n => {
   if(n <= 0){
@@ -444,11 +522,26 @@ const fibonacci = n => {
 #### answer
 `O(1)`
 
+
+
+#### iteratively
+
+
+```
+
+```
+
+
+#### answer
+`O()`
+
+
 ### part 7 
 #### Factorial
 
 Write a recursive function that finds the factorial of a given number. The factorial of a number can be found by multiplying that number by each number between itself and 1. For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
 
+##### recursive
 ```
 const factorial = n => {
   if(n <= 1){

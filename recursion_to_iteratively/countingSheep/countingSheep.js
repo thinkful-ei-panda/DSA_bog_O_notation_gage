@@ -22,13 +22,13 @@ const countingSheep = (n , i=0) => {
 
 const countingSheep = n => {
   let res = '';
-  for(let i = 1 ; i <= n ; i++){
+  for(let i = 0 ; i <= n ; i++){
     if(i === n){
-      res+= 'all sheep have jumped over the fence.... now got the fuck to sleep';
+      res+= 'all sheep have jumped over the fence.... now got the #### to sleep';
+    }else{
+      res += `sheep number ${i + 1} has jumped over the fence \n`;
     }
-    res += `sheep number ${i} has jumped over the fence \n`;
   }
   return res;
 };
-
 console.log(countingSheep(5));
