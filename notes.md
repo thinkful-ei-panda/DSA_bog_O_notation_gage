@@ -449,20 +449,20 @@ const nthTriangularNumber = n =>{
 ```
 
 #### answer
-`O()`
+`O(n)`
+it's running it's self for n time adding onto it's self 1 less then it did the time before till it hit 0 
 
 #### iteratively
 
 
 ```
-
+const nthNumber = n => n * (n + 1)/2
 ```
 
 
 #### answer
-`O()`
-
-
+`O(1)`
+quick mafs
 
 
 ### part 5 
@@ -485,19 +485,35 @@ const stringSplitter = (str, divVal = ' ') => {
 ```
 
 #### answer
-`O(1)`
-
+~`O(1)`~
+`O(n)` most likely since there all doing something ... n number of times 
 
 #### iteratively
 
 
 ```
+const stringSplitter = (str, split='') => {
+
+  if(split === '') return str;
+ 
+  let res=[''] , j =0;
+
+  for(let i = 0 ; i < str.length ; i++){
+    if(str[i]=== split){
+      j++;
+      res.push('');
+    }else{
+      res[j] += str[i];
+    }
+  }
+  return res; 
+};
 
 ```
 
-
 #### answer
-`O()`
+`O(n)`
+since it's checking for something n number of time ... i think 
 
 
 
@@ -520,7 +536,8 @@ const fibonacci = n => {
 ```
 
 #### answer
-`O(1)`
+`O(2n)`... while rewriting this i know there should be way to get this to n(1);
+... but that seems a big out there at this time.
 
 
 
@@ -528,12 +545,24 @@ const fibonacci = n => {
 
 
 ```
+const fibonacci = int => {
+  if( int <= 0 ) return 0 ;
+  if( int ===1 ) return 1; 
 
+  let x = 1 , res = 0, temp; 
+  for(let i = 0 ; i < int; i++){
+    temp = x ; 
+    x = x + res ; 
+    res = temp ; 
+  }
+  return res; 
+};
 ```
 
 
 #### answer
-`O()`
+`O(n)` runs "for" i number of times 
+so a little better then above 
 
 
 ### part 7 
