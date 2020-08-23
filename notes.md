@@ -584,12 +584,26 @@ const factorial = n => {
 
 
 ```
+const factorial = n => {
+  if(!n)return 0;
+  if(n === 1 ) return 1;
+
+  let res = 1 , i = 0;
+  
+  while(i<n)
+  {
+    res *= (n - i);
+    i++;
+  }
+  return res;
+};
 
 ```
 
 
 #### answer
-`O()`
+`O(n)`
+i tried to find an algorithm that would do the some thing but since this has to basicity (n-i) n number of time while i+1's each lap.  
 
 ## question 13
 #### Recursive Big O
